@@ -2,49 +2,88 @@
   <head> 
     <title> Welcome to the Livestream for Chan & Belle's big day! </title> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-p {
-  text-align: center;
-  font-size: 60px;
-  margin-top: 40px;
-  color: MidnightBlue;
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Staatliches|Montserrat|Great Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style media="screen">
+body {
+    text-align: center;
+    background: white;
+    font-family: sans-serif;
+    font-weight: lighter;
 }
-</style>
+
+#timer {
+    font-size: 3em;
+    font-weight: 100;
+    color: gold;
+    padding: 20px;
+    width: 660px;
+    color: #9c7c38;
+    
+}
+
+#timer div {
+    display: inline-block;
+    min-width: 90px;
+    padding: 15px;
+    background: #424548;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#timer div span {
+    color: #9c7c38;
+    display: block;
+    margin-top: 15px;
+    font-size: .35em;
+    font-weight: 400;
+}
+  </style>
 </head>
 
-<h1 style="color:MidnightBlue; text-align: center; font-size: 60px; padding: 40px">Countdown to Chan & Belle's Wedding</h1>
-  
-<p id="demo"></p>
+<h1 style="color:#415F82; font-size: 50px; font-family: Great Vibes;text-align: center"> Chan & Belle's Wedding</h1>
 
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Dec 5, 2021 18:00:00").getTime();
+<p style="color:#415F82; font-size: 18px; font-family: Montserrat;text-align: center"> Thank you for clicking this link in advance.</p>
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+<i class="material-icons" style="font-size: 40px; color:#415F82;">construction</i><p style="color:#415F82; font-size: 18px; font-family: Montserrat;text-align: center">Our livestream video is still under construction. </p>
 
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
+<p style="color:#415F82; font-size: 18px; font-family: Montserrat;text-align: center">The livestream video will be ready in:</p>
+
+<body>
+<div id="timer"></div>
+<script type="text/javascript">
+function updateTimer() {
+    future = Date.parse("December 5, 2021 18:00:00");
+    now = new Date();
+    diff = future - now;
+
+    days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    hours = Math.floor(diff / (1000 * 60 * 60));
+    mins = Math.floor(diff / (1000 * 60));
+    secs = Math.floor(diff / 1000);
+
+    d = days;
+    h = hours - days * 24;
+    m = mins - hours * 60;
+    s = secs - mins * 60;
+
+    document.getElementById("timer")
+        .innerHTML =
+        '<div>' + d + '<span>Days</span></div>' +
+        '<div>' + h + '<span>Hours</span></div>' +
+        '<div>' + m + '<span>Minutes</span></div>' +
+        '<div>' + s + '<span>Seconds</span></div>';
+}
+setInterval('updateTimer()', 1000);
 </script>
+
+<p style="color:#415F82; font-size: 25px; font-family: Great Vibes;text-align: center"> We look forward to seeing you at our event!</p>
+<i class="material-icons" style="font-size: 40px; color:#415F82;">sentiment_very_satisfied</i>
+
+
+</body>
+</html>
+
   </body>
 </html>
