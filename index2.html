@@ -12,13 +12,33 @@ body {
     font-family: Staatliches;
     font-weight: lighter;
 }
+.embed-youtube {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.embed-youtube iframe,
+.embed-youtube object,
+.embed-youtube embed {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 </style>
 </head>
 
 <h1 style="color:#415F82; font-size: 7.5vw; font-family: Great Vibes;text-align: center; margin: 3vw; padding: 2.5vw; letter-spacing: 0.25vw"> Chan & Belle's Wedding</h1>
 
-<iframe width="580" height="330" src="https://www.youtube.com/embed/mS461WlDwxY&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="embed-youtube">
+    <iframe src="https://www.youtube.com/embed/mS461WlDwxY&autoplay=1" width="750" height="563"></iframe>
+</div>
 
 </body>
 </html>
